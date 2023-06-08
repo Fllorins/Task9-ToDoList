@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+  </head>
+  <body>
+    <div class="main" id="mainForFon">
+      <header class="header">
+        <div class="container">
+          <div class="header-fon">
+            <div class="header-title">
+              <h1 class="header-title-head">TODO</h1>
+            </div>
+            <button class="header-icon">
+              <img src="./assets/images/moon.svg" alt="daytime" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="main">
+        <section class="todo-section">
+          <div class="container">
+            <div class="toDo">
+              <div class="toDo-new">
+                <input
+                  class="toDo-new__input"
+                  type="text"
+                  id="new-task"
+                  placeholder="Create a new todo…"
+                />
+                <button class="toDo__add" id="add"></button>
+              </div>
+
+              <div class="toDo-tasks">
+                <div class="toDo__list" id="tasks">
+                  
+                  <div class="toDo__task toDo__task_complete" id="1">
+                    <label class="toDo__checkbox">
+                      <input class="check" type="checkbox" checked />
+                      <div class="toDo__checkbox-div">
+                        <div class="toDo__checkbox-div__innner"></div>
+                      </div>
+                    </label>
+                    <div class="toDo__task-text">
+                      Complete online JavaScript course
+                    </div>
+
+                    <button class="toDo__task-del">
+                      <img
+                        class="toDo__task-del__img"
+                        src="./assets/images/close.svg"
+                        alt="close"
+                      />
+                    </button>
+                  </div>
+                  <!-- 2 -->
+                  <div class="toDo__task" id="2">
+                    <label class="toDo__checkbox">
+                      <input class="check" type="checkbox" />
+                      <div class="toDo__checkbox-div">
+                        <div class="toDo__checkbox-div__innner"></div>
+                      </div>
+                    </label>
+                    <div class="toDo__task-text">Jog around the park 3x</div>
+
+                    <button class="toDo__task-del">
+                      <img
+                        class="toDo__task-del__img"
+                        src="./assets/images/close.svg"
+                        alt="close"
+                      />
+                    </button>
+                  </div>
+
+                  <!-- 3 -->
+                  <div class="toDo__task" id="3">
+                    <label class="toDo__checkbox">
+                      <input class="check" type="checkbox" />
+                      <div class="toDo__checkbox-div">
+                        <div class="toDo__checkbox-div__innner"></div>
+                      </div>
+                    </label>
+                    <div class="toDo__task-text">10 minutes meditation</div>
+
+                    <button class="toDo__task-del">
+                      <img
+                        class="toDo__task-del__img"
+                        src="./assets/images/close.svg"
+                        alt="close"
+                      />
+                    </button>
+                  </div>
+
+                  <!-- 4 -->
+                  <div class="toDo__task" id="4">
+                    <label class="toDo__checkbox">
+                      <input class="check" type="checkbox" />
+                      <div class="toDo__checkbox-div">
+                        <div class="toDo__checkbox-div__innner"></div>
+                      </div>
+                    </label>
+                    <div class="toDo__task-text">Read for 1 hour</div>
+
+                    <button class="toDo__task-del">
+                      <img
+                        class="toDo__task-del__img"
+                        src="./assets/images/close.svg"
+                        alt="close"
+                      />
+                    </button>
+                  </div>
+
+                  <!-- 5 -->
+                  <div class="toDo__task" id="5">
+                    <label class="toDo__checkbox">
+                      <input class="check" type="checkbox" />
+                      <div class="toDo__checkbox-div">
+                        <div class="toDo__checkbox-div__innner"></div>
+                      </div>
+                    </label>
+                    <div class="toDo__task-text">Pick up groceries</div>
+
+                    <button class="toDo__task-del">
+                      <img
+                        class="toDo__task-del__img"
+                        src="./assets/images/close.svg"
+                        alt="close"
+                      />
+                    </button>
+                  </div>
+                  <!-- 6 -->
+                  <div class="toDo__task" id="6">
+                    <label class="toDo__checkbox">
+                      <input class="check" type="checkbox" />
+                      <div class="toDo__checkbox-div">
+                        <div class="toDo__checkbox-div__innner"></div>
+                      </div>
+                    </label>
+                    <div class="toDo__task-text">
+                      Complete Todo App on Frontend Mentor
+                    </div>
+
+                    <button class="toDo__task-del">
+                      <img
+                        class="toDo__task-del__img"
+                        src="./assets/images/close.svg"
+                        alt="close"
+                      />
+                    </button>
+                  </div>
+                </div>
+
+                <div class="toDo-tasks__menu">
+                  <div class="toDo-count">
+                    <span id="count">0</span>
+                    <span>items left</span>
+                  </div>
+
+                  <div class="toDo-folders">
+                    <button class="toDo-folders-all">All</button>
+                    <button class="toDo-folders-all">Active</button>
+                    <button class="toDo-folders-all">Completed</button>
+                  </div>
+
+                  <div class="toDo-clear">
+                    <button class="toDo-clear__btn">Clear Completed</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="assets/js/script.min.js"></script>
+  </body>
+</html>
