@@ -22,22 +22,11 @@ if (toDoList) {
     // console.log(task);
     forTask.push(task);
   });
-
-  // const toDo = toDoList.querySelectorAll('.check');
-  // // console.log(toDo);
-  // toDo.forEach((e) => {
-  //   const checkedToDo = e.hasAttribute('checked');
-
-  //   if (checkedToDo === true) {
-  //     comleted = checkedToDo;
-  //     forCopleted.push(comleted);
-  //   }
-  // });
 }
-console.log(forCopleted);
+// console.log(forCopleted);
 // console.log(forTask);
 const taskMassive = forTask;
-renderTaskCount(taskMassive);
+renderTaskCount(forCopleted);
 
 // add
 add.addEventListener('click', () => {
@@ -82,7 +71,12 @@ function tasksRender(list) {
       : 'toDo__task';
     const checked = task.isComplete ? 'checked' : '';
 
-    // console.log(checked);
+    // console.log(cls);
+    // cls.forEach((e) => {
+    //   if (e == true) {
+    //     forCopleted.push(e);
+    //   }
+    // });
 
     const taskHtml = `<div id = "${task.id}" class="${cls}">
     <label class="toDo__checkbox">
@@ -105,9 +99,10 @@ function tasksRender(list) {
   });
 
   tasks.innerHTML = htmlList;
-  renderTaskCount(taskMassive);
+  renderTaskCount(forCopleted);
 }
-// console.log(taskMassive);
+// console.log(comleted);
+// console.log(forCopleted);
 
 // меняем статус задачи на выполнено
 // отслеживаем клик по задаче
@@ -116,20 +111,21 @@ tasks.addEventListener('click', (event) => {
 
   const isCheckboxEl = target.classList.contains('toDo__checkbox-div__innner');
   const isDeleteEl = target.classList.contains('toDo__task-del__img');
-  console.log(isDeleteEl);
+  // console.log(isDeleteEl);
   if (isCheckboxEl) {
     const task = target.parentElement.parentElement.parentElement;
     const taskId = task.getAttribute('id');
     changeTaskStatus(taskId, taskMassive);
     tasksRender(taskMassive);
-    renderTaskCount(taskMassive);
+    renderTaskCount(forCopleted);
+    console.log(task);
   }
   if (isDeleteEl) {
     const task = target.parentElement.parentElement;
     const taskId = task.getAttribute('id');
     deleteTask(taskId, taskMassive);
     tasksRender(taskMassive);
-    renderTaskCount(taskMassive);
+    renderTaskCount(forCopleted);
   }
 });
 // функция изменения статуса задачи
@@ -137,10 +133,14 @@ function changeTaskStatus(id, list) {
   list.forEach((task) => {
     if (task.id == id) {
       task.isComplete = !task.isComplete;
+      // if (task.value && isNotHaveTask(newTaskText, taskMassive)) {
+        forCopleted.push(task);
+      // }
     }
-    console.log(list.isComplete);
   });
+  console.log(forCopleted.length);
 }
+
 //удаление задачи
 function deleteTask(id, list) {
   list.forEach((task, idx) => {
@@ -154,7 +154,7 @@ function deleteTask(id, list) {
 function renderTaskCount(list) {
   const count = document.getElementById('count');
 
-  count.innerHTML = list.length;
+  count.innerHTML = taskMassive.length - list.length;
   //
 }
 // if (toDoList) {
@@ -170,3 +170,26 @@ function renderTaskCount(list) {
 //     console.log(task);
 //   });
 // }
+
+// durk
+
+const header__btn = document.querySelector('.header-icon');
+header__btn.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (localStorage.getItem('theme') === 'dark') {
+    localStorage.removeItem('theme');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+  addDark();
+});
+function addDark() {
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.querySelector('html').classList.add('dark');
+    } else {
+      document.querySelector('html').classList.remove('dark');
+    }
+  } catch (err) {}
+}
+addDark();

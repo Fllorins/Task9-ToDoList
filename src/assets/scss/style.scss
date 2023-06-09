@@ -2,6 +2,12 @@
 @import 'reset';
 @import 'global';
 
+.dark {
+  background: #171823;
+}
+.dark body {
+  color: $color-base-night;
+}
 .header {
   background: url('../images/day-fon.png'),
     linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
@@ -14,7 +20,7 @@
   width: 100vw;
   height: 300px;
 }
-.darkfon .header {
+.dark .header {
   background: url('../images/night-fon.png') no-repeat,
     linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
   background-position: center;
@@ -33,18 +39,16 @@
   letter-spacing: 15px;
   color: #ffffff;
 }
-.header-title-head {
-}
 .header-icon {
+  width: 26px;
+  height: 26px;
+  padding: 5px;
+  content: '';
+  background: url('../../assets/images/moon.svg');
+  // color: #ffffff;
 }
-
-.main {
-}
-.todo-section {
-}
-.container {
-}
-.toDo {
+.dark .header-icon {
+  background: url('../images/sun.svg');
 }
 .toDo-new {
   position: relative;
@@ -64,6 +68,9 @@
     color: #393a4b;
   }
 }
+.dark .toDo__add{
+  border: 1px solid #393a4b;
+}
 .toDo__task_complete .toDo__task-text {
   text-decoration: line-through;
   opacity: 0.5;
@@ -76,6 +83,11 @@
   border: 1px solid #ffffff;
   width: 100%;
 }
+.dark .toDo-new__input {
+  background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  border: 1px solid transparent;
+}
 .toDo__list > *:not(:last-child) {
   margin-bottom: 8px;
 }
@@ -85,6 +97,11 @@
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   border-radius: 5px;
 }
+.dark .toDo__list {
+  background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  border: 1px solid transparent;
+}
 .toDo__task {
   display: flex;
   align-items: center;
@@ -92,7 +109,9 @@
   border-bottom: 1px solid #e3e4f1;
   position: relative;
 }
-
+.dark .toDo__task {
+  border-bottom: 1px solid #393a4b;
+}
 .toDo__task-del {
   // position: absolute;
   // right: -200px;
@@ -145,6 +164,9 @@
     border: 1px solid transparent;
   }
 }
+.dark .toDo__checkbox-div {
+  border: 1px solid #393a4b;
+}
 .toDo__checkbox-div__innner {
   content: '';
   display: none;
@@ -156,7 +178,9 @@
   z-index: 10;
   transition: all 0.4s;
 }
-
+.dark .toDo__checkbox-div__innner {
+  background: #25273d;
+}
 .toDo__checkbox div::after {
   content: '\2713';
   display: none;
