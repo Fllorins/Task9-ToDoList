@@ -47,8 +47,8 @@
               </div>
 
               <div class="toDo-tasks">
-                <div class="toDo__list" id="tasks">
-                  <div class="toDo__task toDo__task_complete" id="1">
+                <ul class="toDo__list" id="tasks">
+                  <li class="toDo__task toDo__task_complete" id="1">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" checked />
                       <div class="toDo__checkbox-div">
@@ -66,9 +66,9 @@
                         alt="close"
                       />
                     </button>
-                  </div>
+                  </li>
                   <!-- 2 -->
-                  <div class="toDo__task" id="2">
+                  <li class="toDo__task" id="2">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -84,10 +84,10 @@
                         alt="close"
                       />
                     </button>
-                  </div>
+                  </li>
 
                   <!-- 3 -->
-                  <div class="toDo__task" id="3">
+                  <li class="toDo__task" id="3">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -103,10 +103,10 @@
                         alt="close"
                       />
                     </button>
-                  </div>
+                  </li>
 
                   <!-- 4 -->
-                  <div class="toDo__task" id="4">
+                  <li class="toDo__task" id="4">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -122,10 +122,10 @@
                         alt="close"
                       />
                     </button>
-                  </div>
+                  </li>
 
                   <!-- 5 -->
-                  <div class="toDo__task" id="5">
+                  <li class="toDo__task" id="5">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -141,9 +141,9 @@
                         alt="close"
                       />
                     </button>
-                  </div>
+                  </li>
                   <!-- 6 -->
-                  <div class="toDo__task" id="6">
+                  <li class="toDo__task" id="6">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -161,19 +161,19 @@
                         alt="close"
                       />
                     </button>
-                  </div>
-                </div>
+                  </li>
+                </ul>
 
                 <div class="toDo-tasks__menu">
                   <div class="toDo-count">
-                    <span id="count">0</span>
+                    <span id="count">6</span>
                     <span>items left</span>
                   </div>
 
                   <div class="toDo-folders">
-                    <button class="toDo-folders-all">All</button>
-                    <button class="toDo-folders-all">Active</button>
-                    <button class="toDo-folders-all">Completed</button>
+                    <button class="toDo-folders-all all">All</button>
+                    <button class="toDo-folders-all active">Active</button>
+                    <button class="toDo-folders-all completed">Completed</button>
                   </div>
 
                   <div class="toDo-clear">
@@ -182,10 +182,18 @@
                 </div>
               </div>
             </div>
+
+            <div class="hide"></div>
+
+            <div class="toDo-copyright">
+              <span>Drag and drop to reorder list</span>
+            </div>
           </div>
         </section>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+
   </body>
 </html>
