@@ -78,7 +78,7 @@ function tasksRender(list) {
 
     const checked = task.isComplete ? 'checked' : '';
 
-    let taskHtml = `<li id = "${task.id}" class="${cls}" >
+    let taskHtml = `<li id = "${task.id}" class="${cls}" draggable="true">
     <label class="toDo__checkbox">
       <input type="checkbox" ${checked} />
       <div class="toDo__checkbox-div">
@@ -99,18 +99,21 @@ function tasksRender(list) {
   });
 
   tasks.innerHTML = htmlList;
+
   renderTaskCount(taskMassive);
 }
+
+
 
 // меняем статус задачи на выполнено
 // отслеживаем клик по задаче
 tasks.addEventListener('click', (event) => {
   const target = event.target;
 
-  const isCheckboxEl = target.classList.contains('toDo__checkbox-div__innner');
+  const isCheckboxEl = target.classList.contains('toDo__checkbox-div');
   const isDeleteEl = target.classList.contains('toDo__task-del__img');
   if (isCheckboxEl) {
-    const task = target.parentElement.parentElement.parentElement;
+    const task = target.parentElement.parentElement;
     const taskId = task.getAttribute('id');
     changeTaskStatus(taskId, taskMassive);
     tasksRender(taskMassive);
@@ -215,9 +218,29 @@ function addDark() {
 addDark();
 
 //drop
-new Sortable.create(toDoList, {
-  animation: 350,
+
+const list = document.querySelector('.toDo__list');
+Sortable.create(list, {
+  animation: 150,
+  store: {
+    get: function (sortable) {
+      const order = localStorage.getItem(sortable.options.group);
+      return order ? order.split('|') : [];
+    },
+    set: function (sortable) {
+      const order = sortable.toArray();
+      localStorage.setItem(sortable.options.group, order.join('|'));
+    },
+  },
 });
+
+
+
+// list.forEach((element, index) => {
+//   if (element.className.contains('toDo__task')) {
+//     console.log(element[index - 1].classList);
+//   }
+// });
 
 function hideArea() {
   const hideBlock = document.querySelector('.hide');

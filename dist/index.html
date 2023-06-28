@@ -48,7 +48,11 @@
 
               <div class="toDo-tasks">
                 <ul class="toDo__list" id="tasks">
-                  <li class="toDo__task toDo__task_complete" id="1">
+                  <li
+                    class="toDo__task toDo__task_complete item"
+                    id="1"
+                    draggable="true"
+                  >
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" checked />
                       <div class="toDo__checkbox-div">
@@ -68,7 +72,7 @@
                     </button>
                   </li>
                   <!-- 2 -->
-                  <li class="toDo__task" id="2">
+                  <li class="toDo__task item" id="2" draggable="true">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -87,7 +91,7 @@
                   </li>
 
                   <!-- 3 -->
-                  <li class="toDo__task" id="3">
+                  <li class="toDo__task item" id="3" draggable="true">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -106,7 +110,7 @@
                   </li>
 
                   <!-- 4 -->
-                  <li class="toDo__task" id="4">
+                  <li class="toDo__task item" id="4" draggable="true">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -125,7 +129,7 @@
                   </li>
 
                   <!-- 5 -->
-                  <li class="toDo__task" id="5">
+                  <li class="toDo__task item" id="5" draggable="true">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -143,7 +147,7 @@
                     </button>
                   </li>
                   <!-- 6 -->
-                  <li class="toDo__task" id="6">
+                  <li class="toDo__task item" id="6" draggable="true">
                     <label class="toDo__checkbox">
                       <input class="check" type="checkbox" />
                       <div class="toDo__checkbox-div">
@@ -173,7 +177,9 @@
                   <div class="toDo-folders">
                     <button class="toDo-folders-all all">All</button>
                     <button class="toDo-folders-all active">Active</button>
-                    <button class="toDo-folders-all completed">Completed</button>
+                    <button class="toDo-folders-all completed">
+                      Completed
+                    </button>
                   </div>
 
                   <div class="toDo-clear">
@@ -194,6 +200,5 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="assets/js/script.min.js"></script>
-
   </body>
 </html>
